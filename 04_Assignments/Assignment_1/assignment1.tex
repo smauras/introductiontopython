@@ -1,0 +1,151 @@
+\documentclass{homework}
+
+\Title{Assignment 1}
+\DueDate{July 4th, 2023}
+\ClassName{Introduction to Programming with Python}
+\ClassNumber{Columbia University Pre-College Program}
+\ClassSection{Summer Session I}
+\Instructor{Instructor: Daniel Kadyrov}
+\Author{}
+
+\begin{document}
+
+\maketitle
+
+In this assignment, you will practice using variables, floats, integers, strings, lists, and dictionary methods in Python. You will write a program that performs some simple calculations and manipulations on different types of data. You will submit your program as a .py file on the course website. The file should be named \texttt{LastName\_FirstName\_Assignment1.py} where last name and first name are replaced with your last name and first name.\\
+
+\begin{problem}[1 - Variables and Data Types]
+
+Create four variables and assign them values of different data types: a float, an integer, a string, and a list. Print the values and types of each variable using the \texttt{print} and \texttt{type} functions. For example:
+
+\begin{lstlisting}[language=Python]
+x = 3.14
+print(x)
+print(type(x))
+\end{lstlisting}
+
+This will output:
+
+\begin{lstlisting}[style=output]
+3.14
+<class 'float'>
+\end{lstlisting}
+
+\end{problem}
+
+\begin{problem}[2 - Arithmetic Operations]
+
+Using the variables you created in Task 1, perform some arithmetic operations on them and print the results. For example, if you have a variable \texttt{y} that is an integer, you can do:
+
+\begin{lstlisting}[language=Python]
+z = x + y
+print(z)
+print(type(z))
+\end{lstlisting}
+
+This will output:
+
+\begin{lstlisting}[style=output]
+6.140000000000001
+<class 'float'>
+\end{lstlisting}
+
+Note that the result is a float, even though one of the operands was an integer. This is because Python automatically converts integers to floats when performing arithmetic operations with floats.
+
+Try different operations such as subtraction, multiplication, division, exponentiation, and modulo. What happens when you try to perform an operation on incompatible data types, such as a string and a list?
+
+\end{problem}
+
+\newpage
+\begin{problem}[3 - String Methods]
+
+Using the variable that is a string, apply some string methods on it and print the results. For example, if you have a variable \texttt{s} that is a string, you can do:
+
+\begin{lstlisting}[language=Python]
+s = "hello"
+s_upper = s.upper()
+print(s_upper)
+\end{lstlisting}
+
+This will output:
+
+\begin{lstlisting}[style=output]
+HELLO
+\end{lstlisting}
+
+Some other string methods you can try are \texttt{lower}, \texttt{capitalize}, \texttt{title}, \texttt{strip}, \texttt{replace}, \texttt{split}, \texttt{join}, \texttt{find}, \texttt{count}, \texttt{len}, etc. You can find more information about string methods here:\\
+
+\url{https://docs.python.org/3/library/stdtypes.html#string-methods}
+
+\end{problem}
+
+\begin{problem}[4 - List Methods]
+
+Using the variable that is a list, apply some list methods on it and print the results. For example, if you have a variable \texttt{l} that is a list, you can do:
+
+\begin{lstlisting}[language=Python]
+l = [1, 2, 3, 4]
+l.append(5)
+print(l)
+\end{lstlisting}
+
+This will output:
+
+\begin{lstlisting}[style=output]
+[1, 2, 3, 4, 5]
+\end{lstlisting}
+
+Some other list methods you can try are \texttt{insert}, \texttt{remove}, \texttt{pop}, \texttt{index}, \texttt{sort}, \texttt{reverse}, \texttt{copy}, etc. You can find more information about list methods here:\\
+
+\url{https://docs.python.org/3/tutorial/datastructures.html#more-on-lists}
+\end{problem}
+
+\newpage
+\begin{problem}[5 -  Dictionary Methods]
+
+Create a dictionary that maps some keys to some values. The keys and values can be of any data type. Print the dictionary using the \texttt{print} function. For example:
+
+\begin{lstlisting}[language=Python]
+d = {
+    "name": "Alice", 
+    "age": 25, 
+    "hobbies": ["reading", "writing", "coding"]
+}
+print(d)
+\end{lstlisting}
+
+This will output:
+
+\begin{lstlisting}[style=output]
+{
+    'name': 'Alice', 
+    'age': 25, 
+    'hobbies': ['reading', 'writing', 'coding']
+}
+\end{lstlisting}
+
+Using the dictionary you created, apply some dictionary methods on it and print the results. For example, you can do:
+
+\begin{lstlisting}[language=Python]
+d["gender"] = "female"
+print(d)
+\end{lstlisting}
+
+This will output:
+
+\begin{lstlisting}[style=output]
+{
+    'name': 'Alice', 
+    'age': 25, 
+    'hobbies': ['reading', 'writing', 'coding'], 
+    'gender': 'female'
+}
+\end{lstlisting}
+
+Some other dictionary methods you can try are \texttt{get}, \texttt{pop}, \texttt{keys}, \texttt{values}, \texttt{items}, \texttt{update}, \texttt{clear}, etc. You can find more information about dictionary methods here:\\
+
+\url{https://docs.python.org/3/tutorial/datastructures.html#dictionaries}
+
+\end{problem}
+
+\end{document}
