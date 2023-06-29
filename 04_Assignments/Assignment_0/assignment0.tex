@@ -1,0 +1,95 @@
+\documentclass{homework}
+
+\Title{Assignment 0}
+\DueDate{July 5th, 2023}
+\ClassName{Introduction to Programming with Python}
+\ClassNumber{Columbia University Pre-College Program}
+\ClassSection{Summer Session I}
+\Instructor{Instructor: Daniel Kadyrov}
+\Author{}
+
+\begin{document}
+
+\maketitle
+
+This first assignment prepares your computer for the course.\\
+
+\begin{problem}[1 - Git and GitHub]
+
+Git and GitHub are tools that you will use throughout the course. Git is a version control system that you will use to manage your code. GitHub is a website that hosts Git repositories. You will use GitHub to submit your assignments and projects.\\
+
+\begin{enumerate}
+    \item Create a GitHub Education account:\\
+    
+    \url{https://education.github.com/}\\
+    
+    You will use this account to submit your assignments and projects. You will also use it to access the course materials. The student accounts provide other benefits like free access to the GitHub Student Developer Pack.
+    
+    \item Download and install Git:\\
+
+    \url{https://git-scm.com/downloads}\\
+    
+    Git is a version control system that you will use to manage your code. It is also a popular tool for collaboration. You will use Git to submit your assignments and projects.
+    
+    \item Fork and clone the following repository:\\
+
+    \url{https://github.com/dkadyrov/introductiontopython}\\
+    
+    You will use this repository to access the course materials. You will also use it to submit your assignments and projects.
+
+    To fork the repository, go to the repository in your browser and click the fork button in the top right corner. This will create a copy of the repository in your GitHub account. To clone the repository, go to the repository in your browser and click the green code button. Copy the link.
+
+    In terminal, you can navigate to the directory you want to clone the repository to through the \texttt{cd} command. Then, type \texttt{git clone <link>} where \texttt{<link>} is the link you copied from the repository. This will create a copy of the repository on your local machine. This is demonstrated in the following code block:\\
+
+    \begin{lstlisting}[language=bash]
+cd Documents
+cd "Columbia Summer Course"
+git clone <link>
+    \end{lstlisting}
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}[2 - Python Environment]
+
+    Python has many different distributions, versions, and management tools. Although Anaconda is commonly used for data science, we will be using \href{https://github.com/pyenv/pyenv}{PyEnv} to manage our Python distributions.\\
+
+    Python constantly gets updated. Currently it is on version 3.11.3. However, many packages and programs still use older versions of Python. PyEnv allows us to manage multiple versions of Python on our machine. We can also set a default version of Python to use.\\
+    
+    For windows users, copy and paste the following code into your Command Prompt: 
+\begin{lstlisting}[language=bash]
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+\end{lstlisting}
+
+    For mac users, copy and paste the following code, line-by-line, into your terminal: 
+
+\begin{lstlisting}[language=bash]
+brew update
+brew install pyenv
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+\end{lstlisting}
+
+To check that PyEnv was installed correctly, type \texttt{pyenv} into your terminal or command prompt. You should see a list of commands that you can use with PyEnv.\\
+
+To install Python through PyEnv, type \texttt{pyenv install <version>} where \texttt{<version>} is the version of Python you want to install. For example, to install Python 3.8.5, type \texttt{pyenv install 3.8.5}. This environment now needs to be set as the global, default, Python environment through the \texttt{global} command. This course is going to use Python 3.10.10 as its distribution.\\
+
+\begin{lstlisting}
+pyenv install 3.10.10
+pyenv global 3.10.10
+\end{lstlisting}
+
+\end{problem}
+
+\begin{problem}[3 - Visual Studio Code]
+
+Visual Studio Code, or VSCode, is a text editor that we will use to write our code. It is a popular text editor for Python and other programming languages. Download and install VSCode:\\
+
+\url{https://code.visualstudio.com/download}\\
+
+Once you install VSCode, you will need to install the Python extension. This extension will allow you to run Python code in VSCode. To install the Python extension, click the extensions button on the left side of the screen. Then, search for Python and install the first extension that appears.\\
+
+You can have fun and personalize your VSCode environment. You can change the theme, font, and other settings. You can also install other extensions that you find useful.\\
+
+\end{problem}
+
+\end{document}

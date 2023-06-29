@@ -1,0 +1,112 @@
+\documentclass[
+    aspectratio=169, 
+    usepdftitle=false, 
+    xcolor={dvipsnames},
+    hyperref={
+        colorlinks,
+        linkcolor=black,
+        urlcolor=blue}
+    ]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{amsmath}
+\lstset{
+    numbers=left,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+}
+
+\lstdefinestyle{output}{
+    numbers=none,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+    backgroundcolor=\color{lightgray},
+}
+% \usepackage{xcolor}
+
+\hypersetup{colorlinks,urlcolor=blue}
+\addtobeamertemplate{headline}{\hypersetup{linkcolor=.}}{}
+\addtobeamertemplate{footline}{\hypersetup{linkcolor=.}}{}
+
+\definecolor{Light}{gray}{.90}
+\sethlcolor{Light}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}% will affect all \texttt
+
+\title[Introduction to Python]{Introduction to Python}
+\subtitle{Lecture 5: Classes and Objects}
+\author{Daniel Kadyrov}
+\date{July 4th, 2023}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}[fragile]{Objects and Classes}
+    \begin{itemize}
+        \item Python is an object-oriented programming language.
+        \item Almost everything in Python is an object, with its properties and methods.
+        \item A Class is like an object constructor, or a "blueprint" for creating objects.
+        \item A Class is defined using the \texttt{class} keyword.
+        \item The \texttt{class} keyword is followed by the class name, parentheses \texttt{()}, and a colon \texttt{:}.
+        \item The \texttt{self} parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.
+        \item It does not have to be named \texttt{self}, you can call it whatever you like, but it has to be the first parameter of any function in the class.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Objects and Classes}
+    \begin{itemize}
+        \item Use the \texttt{init()} function to assign values to object properties, or other operations that are necessary to do when the object is being created.
+        \item The \texttt{init()} function is called automatically every time the class is being used to create a new object.
+        \item All classes have a function called \texttt{init()}, which is always executed when the class is being initiated.
+        \item Use the \texttt{self} parameter to refer to the current instance of the class, and access variables that belongs to the class.
+        \item It does not have to be named \texttt{self}, you can call it whatever you like, but it has to be the first parameter of any function in the class.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Objects and Classes}
+    \framesubtitle{Example}
+    \begin{lstlisting}[language=Python]
+class MyClass:
+    x = 5
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def myfunc(self):
+        print("Hello my name is " + self.name)
+    def myfunc2(self):
+        print("Hello my age is " + str(self.age))
+    \end{lstlisting}
+\end{frame}
+\end{document}

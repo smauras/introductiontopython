@@ -1,0 +1,240 @@
+\documentclass[
+    aspectratio=169, 
+    usepdftitle=false, 
+    xcolor={dvipsnames},
+    hyperref={
+        colorlinks,
+        linkcolor=black,
+        urlcolor=blue}
+    ]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{amsmath}
+\lstset{
+    numbers=left,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+}
+
+\lstdefinestyle{output}{
+    numbers=none,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+    backgroundcolor=\color{lightgray},
+}
+% \usepackage{xcolor}
+
+\hypersetup{colorlinks,urlcolor=blue}
+\addtobeamertemplate{headline}{\hypersetup{linkcolor=.}}{}
+\addtobeamertemplate{footline}{\hypersetup{linkcolor=.}}{}
+
+\definecolor{Light}{gray}{.90}
+\sethlcolor{Light}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}% will affect all \texttt
+
+\title[Introduction to Python]{Introduction to Python}
+\subtitle{Lecture 4: Packages}
+\author{Daniel Kadyrov}
+\date{July 4th, 2023}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Python Packages}
+    \begin{itemize}
+    \item One of the most powerful features of Python is the availability of a large number of libraries and packages that can be imported into your code.
+    \item These packages are open-source and managed by the Python community.
+    \item The Python Package Index (PyPI) is a repository of software for the Python programming language. Packages are usually installed from the Python Package Index using the \texttt{pip} command.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Installing a package}
+    The following command installs the \texttt{numpy} package. This command is performed in the terminal, not in the Python interpreter. Numpy is a package for scientific computing in Python that extends the functionality of Python lists to arrays.
+
+    \begin{lstlisting}[language=bash]
+pip install numpy
+    \end{lstlisting}
+
+    To use the package in your code, you need to import it. The following code snippet imports the \texttt{numpy} package and assigns it the alias \texttt{np}.
+
+    \begin{lstlisting}[language=Python]
+import numpy as np
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Numpy}
+    \begin{itemize}
+        \item Numpy is a package for scientific computing in Python that extends the functionality of Python lists to arrays.
+        \item Numpy arrays are more efficient than Python lists.
+        \item Numpy arrays are homogeneous, i.e. they can only contain elements of the same type.
+        \item Numpy arrays can be multidimensional.
+        \item Numpy arrays can be created from Python lists using the \texttt{array()} function.
+    \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Numpy}
+
+    The following example shows some of the basic operations that can be performed on numpy arrays. The \texttt{linspace} function creates an array of 5 elements between 10 and 14. The \texttt{arange} function creates an array of 5 elements between 1 and 5. The \texttt{add} function adds the two arrays element-wise.
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+\begin{lstlisting}[language=Python]
+import numpy as np
+a = np.linspace(10, 14, 5)
+print(a)    
+b = np.arange(1, 6)
+print(b)
+print(np.add(a,b))
+\end{lstlisting}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{lstlisting}[style=output]
+[10. 11. 12. 13. 14.]
+[1 2 3 4 5]
+[11. 13. 15. 17. 19.]
+\end{lstlisting}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Pandas}
+    \begin{itemize}
+        \item Pandas is a Python package for data manipulation and analysis.
+        \item Pandas provides data structures and functions that make working with structured data easier.
+        \item Pandas is built on top of Numpy.
+        \item Pandas provides two data structures: Series and DataFrame.
+        \item A Series is a one-dimensional array of indexed data.
+        \item A DataFrame is a two-dimensional array of indexed data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pandas}
+    \begin{itemize}
+        \item Pandas provides functions to read data from different file formats, such as CSV, Excel, JSON, HTML, etc.
+        \item Pandas provides functions to write data to different file formats, such as CSV, Excel, JSON, HTML, etc.
+        \item Pandas provides functions to manipulate data, such as merging, reshaping, selecting, etc.
+        \item Pandas provides functions to perform statistical analysis on data.
+        \item Pandas provides functions to visualize data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Pandas}
+    The following example shows how to create a DataFrame from a CSV file. The \texttt{read\_csv} function reads the CSV file and creates a DataFrame. The \texttt{head} function displays the first 5 rows of the DataFrame.
+
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+\begin{lstlisting}[language=Python]
+import pandas as pd
+df = pd.read_csv('data.csv')
+df.head()
+\end{lstlisting}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{lstlisting}[style=output]
+   id  age  weight  height
+0   1   22      65     170
+1   2   25      70     175
+2   3   28      75     180
+3   4   31      80     185
+4   5   34      85     190
+\end{lstlisting}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Pandas}
+    There are a multitude of functions available from Panda to manipulate data. The following example shows how to select a subset of the data. The \texttt{loc} function selects rows and columns by label. The \texttt{iloc} function selects rows and columns by position.
+
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+\begin{lstlisting}[language=Python]
+import pandas as pd
+df = pd.read_csv('data.csv')
+df.loc[0:2, ['age', 'weight']]
+df.iloc[0:2, 1:3]
+\end{lstlisting}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{lstlisting}[style=output]
+   age  weight
+0   22      65
+1   25      70
+2   28      75
+   age  weight
+0   22      65
+1   25      70
+\end{lstlisting}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Pandas}
+    The following example shows how to perform statistical analysis on data. The \texttt{describe} function computes summary statistics for numerical columns. The \texttt{value\_counts} function counts the number of occurrences of each value in a column.
+
+\begin{lstlisting}[language=Python]
+import pandas as pd
+df = pd.read_csv('data.csv')
+df.describe()
+df['age'].value_counts()
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Pandas}
+    The following example shows how to visualize data. The \texttt{plot} function plots the data in a DataFrame. The \texttt{plot} function can be used to plot different types of plots, such as line plots, bar plots, pie plots, scatter plots, etc.
+
+\begin{lstlisting}[language=Python]
+import pandas as pd
+df = pd.read_csv('data.csv')
+df.plot()
+df.plot(kind='bar')
+df.plot(kind='pie')
+df.plot(kind='scatter', x='age', y='weight')
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Graphing}
+    There are several plotting libraries for Python. The most popular ones are Matplotlib, Seaborn, and Plotly.
+\end{frame}
+
+\begin{frame}[fragile]{Writing Packages}
+    \begin{itemize}
+        \item A package is a collection of Python modules.
+        \item A package is a directory containing \texttt{\_\_init\_\_.py} file.
+        \item This file can be empty, and it indicates that the directory it contains is a Python package, so it can be imported the same way a module can be imported.
+        \item A package can contain subpackages, which are subdirectories containing again a \texttt{\_\_init\_\_.py} file, and submodules, which are Python scripts like any other Python modules.
+        \item A package can also contain \texttt{c-extensions}, which are compiled C code.
+    \end{itemize}
+\end{frame}
+\end{document}

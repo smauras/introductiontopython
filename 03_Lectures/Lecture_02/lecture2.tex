@@ -1,0 +1,364 @@
+\documentclass[
+    aspectratio=169, 
+    usepdftitle=false, 
+    xcolor={dvipsnames},
+    hyperref={
+        colorlinks,
+        linkcolor=black,
+        urlcolor=blue}
+    ]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{amsmath}
+\lstset{
+    numbers=left,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+}
+
+\lstdefinestyle{output}{
+    numbers=none,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+    backgroundcolor=\color{lightgray},
+}
+% \usepackage{xcolor}
+
+\hypersetup{colorlinks,urlcolor=blue}
+\addtobeamertemplate{headline}{\hypersetup{linkcolor=.}}{}
+\addtobeamertemplate{footline}{\hypersetup{linkcolor=.}}{}
+
+\definecolor{Light}{gray}{.90}
+\sethlcolor{Light}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}% will affect all \texttt
+
+\title[Introduction to Python]{Introduction to Python}
+\subtitle{Lecture 2: Loops and Conditionals}
+\author{Daniel Kadyrov}
+\date{July 4th, 2023}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Loops}
+    \begin{itemize}
+        \item Loops are used to repeat a block of code a certain number of times.
+        \item There are two types of loops in Python: \texttt{for} loops and \texttt{while} loops.
+        \begin{itemize}
+            \item \texttt{for} loops are used to iterate over a sequence.
+            \item \texttt{while} loops are used to repeat a block of code while a condition is true.
+        \end{itemize}
+        \item Loops are useful for automating repetitive tasks, iterating over data, and more.
+        \item Loops can be broken out of using the \texttt{break} keyword.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{For Loops}
+    \begin{itemize}
+        \item \texttt{for} loops are used to iterate over a sequence.
+        \item The syntax for a \texttt{for} loop is as follows:
+        \begin{lstlisting}[language=Python]
+for <variable> in <sequence>:
+    <code>
+        \end{lstlisting}
+        \item The \texttt{<variable>} is a variable that will be assigned to each element in the \texttt{<sequence>} one at a time.
+        \item The \texttt{<code>} is the code that will be executed for each element in the \texttt{<sequence>}.
+        \item The \texttt{<sequence>} can be a list, tuple, string, or any other iterable object.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{For Loops}
+    \begin{itemize}
+        \item Here is an example of a \texttt{for} loop:
+        \begin{lstlisting}[language=Python]
+for i in [1, 2, 3, 4, 5]:
+    print(i)
+        \end{lstlisting}
+        \item This will print the numbers 1 through 5.
+        \item The \texttt{<variable>} \texttt{i} is assigned to each element in the list one at a time.
+        \item The \texttt{<code>} \texttt{print(i)} is executed for each element in the list.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{For Loops}
+    \begin{itemize}
+        \item Here is another example of a \texttt{for} loop:
+        \begin{lstlisting}[language=Python]
+for i in range(5):
+    print(i)
+        \end{lstlisting}
+        \item This will print the numbers 0 through 4.
+        \item The \texttt{range()} function returns a sequence of numbers.
+        \item The \texttt{range()} function can take up to three arguments: \texttt{range(start, stop, step)}.
+        \item The \texttt{start} argument is the number to start at (default is 0).
+        \item The \texttt{stop} argument is the number to stop at (not included).
+        \item The \texttt{step} argument is the number to increment by (default is 1).
+    \end{itemize}   
+\end{frame}
+\begin{frame}[fragile]{For Loops}
+    \begin{itemize}
+        \item Here is another example of a \texttt{for} loop:
+        \begin{lstlisting}[language=Python]
+for i in range(1, 10, 2):
+    print(i)
+        \end{lstlisting}
+        \item This will print the odd numbers from 1 to 9.
+        \item The \texttt{range()} function can be used to iterate over a sequence of numbers.
+        \item The \texttt{range()} function can be used to iterate over a sequence of numbers.
+    \end{itemize}
+\end{frame}
+    
+\begin{frame}[fragile]{While Loops}
+    \begin{itemize}
+        \item \texttt{while} loops are used to repeat a block of code while a condition is true.
+        \item The syntax for a \texttt{while} loop is as follows:
+        \begin{lstlisting}[language=Python]
+while <condition>:
+    <code>
+        \end{lstlisting}
+        \item The \texttt{<condition>} is a boolean expression that is evaluated each time the loop is run.
+        \item The \texttt{<code>} is the code that will be executed while the \texttt{<condition>} is true.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{While Loops}
+    \begin{itemize}
+        \item Here is an example of a \texttt{while} loop:
+        \begin{lstlisting}[language=Python]
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+        \end{lstlisting}
+        \item This will print the numbers 0 through 4.
+        \item The \texttt{<condition>} \texttt{i < 5} is evaluated each time the loop is run.
+        \item The \texttt{<code>} \texttt{print(i)} is executed while the \texttt{<condition>} is true.
+        \item The \texttt{<code>} \texttt{i += 1} increments the variable \texttt{i} by 1 each time the loop is run.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Nested Loops}
+    \begin{itemize}
+        \item Loops can be nested inside each other.
+        \item Here is an example of a nested \texttt{for} loop:
+        \begin{lstlisting}[language=Python]
+for i in range(5):
+    for j in range(5):
+        print(i, j)
+        \end{lstlisting}
+        \item This will print the numbers 0 through 4.
+        \item The \texttt{<code>} \texttt{print(i, j)} is executed for each element in the list.
+        \item The \texttt{<variable>} \texttt{i} is assigned to each element in the list one at a time.
+        \item The \texttt{<variable>} \texttt{j} is assigned to each element in the list one at a time.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Conditionals}
+    \begin{itemize}
+        \item Conditionals are used to execute a block of code if a condition is true.
+        \item There are three types of conditionals in Python: \texttt{if} statements, \texttt{elif} statements, and \texttt{else} statements.
+        \begin{itemize}
+            \item \texttt{if} statements are used to execute a block of code if a condition is true.
+            \item \texttt{elif} statements are used to execute a block of code if another condition is true.
+            \item \texttt{else} statements are used to execute a block of code if no other condition is true.
+        \end{itemize}
+        \item Conditionals are useful for executing code based on certain conditions.
+        \item Conditionals can be nested inside each other.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If Statements}
+    \begin{itemize}
+        \item \texttt{if} statements are used to execute a block of code if a condition is true.
+        \item The syntax for an \texttt{if} statement is as follows:
+        \begin{lstlisting}[language=Python]
+if <condition>:
+    <code>
+        \end{lstlisting}
+        \item The \texttt{<condition>} is a boolean expression that is evaluated.
+        \item The \texttt{<code>} is the code that will be executed if the \texttt{<condition>} is true.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If Statements}
+    \begin{itemize}
+        \item Here is an example of an \texttt{if} statement:
+        \begin{lstlisting}[language=Python]
+if x > 0:
+    print("x is positive")
+        \end{lstlisting}
+        \item This will print \texttt{x is positive} if the variable \texttt{x} is greater than 0.
+        \item The \texttt{<condition>} \texttt{x > 0} is evaluated.
+        \item The \texttt{<code>} \texttt{print("x is positive")} is executed if the \texttt{<condition>} is true.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Elif Statements}
+    \begin{itemize}
+        \item \texttt{elif} statements are used to execute a block of code if another condition is true.
+        \item The syntax for an \texttt{elif} statement is as follows:
+        \begin{lstlisting}[language=Python]
+if <condition>:
+    <code>
+elif <condition>:
+    <code>
+        \end{lstlisting}
+        \item The \texttt{<condition>} is a boolean expression that is evaluated.
+        \item The \texttt{<code>} is the code that will be executed if the \texttt{<condition>} is true.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Elif Statements}
+    \begin{itemize}
+        \item Here is an example of an \texttt{elif} statement:
+        \begin{lstlisting}[language=Python]
+if x > 0:
+    print("x is positive")
+elif x < 0:
+    print("x is negative")
+        \end{lstlisting}
+        \item This will print \texttt{x is positive} if the variable \texttt{x} is greater than 0.
+        \item This will print \texttt{x is negative} if the variable \texttt{x} is less than 0.
+        \item The \texttt{<condition>} \texttt{x > 0} is evaluated.
+        \item The \texttt{<code>} \texttt{print("x is positive")} is executed if the \texttt{<condition>} is true.
+        \item The \texttt{<condition>} \texttt{x < 0} is evaluated.
+        \item The \texttt{<code>} \texttt{print("x is negative")} is executed if the \texttt{<condition>} is true.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Else Statements}
+    \begin{itemize}
+        \item \texttt{else} statements are used to execute a block of code if no other condition is true.
+        \item The syntax for an \texttt{else} statement is as follows:
+        \begin{lstlisting}[language=Python]
+if <condition>:
+    <code>
+elif <condition>:
+    <code>
+else:
+    <code>
+        \end{lstlisting}
+        \item The \texttt{<condition>} is a boolean expression that is evaluated.
+        \item The \texttt{<code>} is the code that will be executed if the \texttt{<condition>} is true.
+    \end{itemize}   
+\end{frame}
+
+\begin{frame}[fragile]{Else Statements}
+    \begin{itemize}
+        \item Here is an example of an \texttt{else} statement:
+        \begin{lstlisting}[language=Python]
+if x > 0:
+    print("x is positive")
+elif x < 0:
+    print("x is negative")
+else:
+    print("x is zero")
+        \end{lstlisting}
+        \item This will print \texttt{x is positive} if the variable \texttt{x} is greater than 0.
+        \item This will print \texttt{x is negative} if the variable \texttt{x} is less than 0.
+        \item This will print \texttt{x is zero} if the variable \texttt{x} is equal to 0.
+        \item The \texttt{<condition>} \texttt{x > 0} is evaluated.
+        \item The \texttt{<code>} \texttt{print("x is positive")} is executed if the \texttt{<condition>} is true.
+        \item The \texttt{<condition>} \texttt{x < 0} is evaluated.
+        \item The \texttt{<code>} \texttt{print("x is negative")} is executed if the \texttt{<condition>} is true.
+        \item The \texttt{<code>} \texttt{print("x is zero")} is executed if no other \texttt{<condition>} is true.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Nested Conditionals}
+    \begin{itemize}
+        \item Conditionals can be nested inside each other.
+        \item This means that conditionals can be inside other conditionals.
+        \item Here is an example of nested conditionals:
+        \begin{lstlisting}[language=Python]
+if x > 0:
+    if x > 10:
+        print("x is greater than 10")
+    else:
+        print("x is between 0 and 10")
+else:
+    print("x is less than or equal to 0")
+        \end{lstlisting}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Nested Conditionals}
+    \begin{itemize}
+        \item This will print \texttt{x is greater than 10} if the variable \texttt{x} is greater than 10.
+        \item This will print \texttt{x is between 0 and 10} if the variable \texttt{x} is between 0 and 10.
+        \item This will print \texttt{x is less than or equal to 0} if the variable \texttt{x} is less than or equal to 0.
+        \item The \texttt{<condition>} \texttt{x > 0} is evaluated.
+        \item The \texttt{<condition>} \texttt{x > 10} is evaluated if the \texttt{<condition>} \texttt{x > 0} is true.
+        \item The \texttt{<code>} \texttt{print("x is greater than 10")} is executed if the \texttt{<condition>} \texttt{x > 10} is true.
+        \item The \texttt{<code>} \texttt{print("x is between 0 and 10")} is executed if the \texttt{<condition>} \texttt{x > 10} is false.
+        \item The \texttt{<code>} \texttt{print("x is less than or equal to 0")} is executed if the \texttt{<condition>} \texttt{x > 0} is false.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Nested Conditionals}
+    \begin{itemize}
+        \item Here is another example of nested conditionals:
+        \begin{lstlisting}[language=Python]
+if x > 0:
+    if x > 10:
+        print("x is greater than 10")
+    elif x > 5:
+        print("x is between 5 and 10")
+    else:
+        print("x is between 0 and 5")
+else:
+    print("x is less than or equal to 0")
+        \end{lstlisting}
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}[fragile]{Nested Conditionals}
+%     \begin{itemize}
+%         \item This will print \texttt{x is greater than 10} if the variable \texttt{x} is greater than 10.
+%         \item This will print \texttt{x is between 5 and 10} if the variable \texttt{x} is between 5 and 10.
+%         \item This will print \texttt{x is between 0 and 5} if the variable \texttt{x} is between 0 and 5.
+%         \item This will print \texttt{x is less than or equal to 0} if the variable \texttt{x} is less than or equal to 0.
+%         \item The \texttt{<condition>} \texttt{x > 0} is evaluated.
+%         \item The \texttt{<condition>} \texttt{x > 10} is evaluated if the \texttt{<condition>} \texttt{x > 0} is true.
+%         \item The \texttt{<code>} \texttt{print("x is greater than 10")} is executed if the \texttt{<condition>} \texttt{x > 10} is true.
+%         \item The \texttt{<condition>} \texttt{x > 5} is evaluated if the \texttt{<condition>} \texttt{x > 0} is true and the \texttt{<condition>} \texttt{x > 10} is false.
+%         \item The \texttt{<code>} \texttt{print("x is between 5 and 10")} is executed if the \texttt{<condition>} \texttt{x > 5} is true.
+%         \item The \texttt{<code>} \texttt{print("x is between 0 and 5")} is executed if the \texttt{<condition>} \texttt{x > 5} is false.
+%         \item The \texttt{<code>} \texttt{print("x is less than or equal to 0")} is executed if the \texttt{<condition>} \texttt{x > 0} is false.
+%     \end{itemize}
+% \end{frame}
+
+\end{document}

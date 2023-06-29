@@ -1,0 +1,142 @@
+\documentclass[
+    aspectratio=169, 
+    usepdftitle=false, 
+    xcolor={dvipsnames},
+    hyperref={
+        colorlinks,
+        linkcolor=black,
+        urlcolor=blue}
+    ]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{amsmath}
+\lstset{
+    numbers=left,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+}
+
+\lstdefinestyle{output}{
+    numbers=none,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+    backgroundcolor=\color{lightgray},
+}
+% \usepackage{xcolor}
+
+\hypersetup{colorlinks,urlcolor=blue}
+\addtobeamertemplate{headline}{\hypersetup{linkcolor=.}}{}
+\addtobeamertemplate{footline}{\hypersetup{linkcolor=.}}{}
+
+\definecolor{Light}{gray}{.90}
+\sethlcolor{Light}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}% will affect all \texttt
+
+\title[Introduction to Python]{Introduction to Python}
+\subtitle{Lecture 6: Git and Collaboration}
+\author{Daniel Kadyrov}
+\date{July 4th, 2023}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Git}
+    \begin{itemize}
+        \item Git is a version control system that lets you manage and keep track of your source code history.
+        \item Git is a distributed version control system, meaning that the entire codebase and history is available on every developer's computer, which allows for easy branching and merging.
+        \item Git is the most commonly used version control system, and is used as the basis for many other services and tools.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Cloning}
+    \begin{itemize}
+        \item Cloning is the process of downloading or copying a repository to the destination location from the server/source.
+        \item Cloning a repository pulls down a full copy of all the repository data that GitHub has at that point in time, including all versions of every file and folder for the project.
+        \item You can clone your existing repository or clone another person's existing repository to contribute to a project.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pulling}
+    \begin{itemize}
+        \item Pulling is the process of downloading and merging changes from a remote repository into your local repository.
+        \item You can think of this as the opposite of pushing.
+        \item Pulling is a combination of \texttt{git fetch} and \texttt{git merge}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pushing}
+    \begin{itemize}
+        \item Pushing is the process of uploading your local changes to a remote repository.
+        \item It's the counterpart to \texttt{git pull}, but whereas fetching imports commits to local branches, pushing exports commits to remote branches.
+        \item This has the potential to overwrite changes, so you need to be careful.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Committing}
+    \begin{itemize}
+        \item Committing is the process of creating a snapshot of your changes.
+        \item Git compares the committed snapshots and determines what has changed since the last commit.
+        \item You can think of this as a save point in a game.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Branching}
+    \begin{itemize}
+        \item Branching is the process of creating copies of a repository in order to develop features or make bug fixes isolated from the main codebase.
+        \item Each repository has one default branch, and can have multiple other branches.
+        \item You can merge a branch into another branch using a pull request.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Git Workflow}
+    \begin{itemize}
+        \item Create a new branch.
+        \item Add commits.
+        \item Open a pull request.
+        \item Discuss and review your code.
+        \item Deploy.
+        \item Merge.
+    \end{itemize}
+
+    \begin{lstlistings}[language=bash]
+        git checkout -b new-branch
+        git add .
+        git commit -m "message"
+        git push origin new-branch
+    \end{lstlistings}
+\end{frame}
+
+\end{document}
