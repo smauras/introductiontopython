@@ -65,7 +65,7 @@
 \title[Introduction to Python]{Introduction to Python}
 \subtitle{Lecture 3: Functions and Classes}
 \author{Daniel Kadyrov}
-\date{July 4th, 2023}
+\date{July 6th, 2023}
 
 \begin{document}
 
@@ -118,6 +118,9 @@ def capitalize_sentence(sentence):
     return " ".join(capitalized_words)
     \end{lstlisting}
 
+\end{frame}
+\begin{frame}[fragile]{Functions}
+
     The function can be called as follows:
 
     \begin{lstlisting}[language=Python]
@@ -136,18 +139,21 @@ Code Is Like Humor. When You Have To Explain It, It's Bad.
     \framesubtitle{Recursive Functions}
     A recursive function is a function that calls itself during its execution. This enables the function to repeat itself several times, outputting the result and the end of each iteration.\\~\
 
-
-
 \end{frame}
 
 \begin{frame}[fragile]{Functions}
     \framesubtitle{Recursive Functions}
 
-    The following code snippet defines a recursive function that calculates the factorial of a number. Mathematically, a factorial is expressed the following way: 
-
+    The following example defines a recursive function that calculates the factorial of a number. Mathematically, a factorial is expressed the following way: 
     \begin{equation*}
         n! = n \times (n-1) \times (n-2) \times \dots \times 1
     \end{equation*}
+
+    For example, $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$.\\~\
+
+\end{frame}
+\begin{frame}[fragile]{Functions}
+    \framesubtitle{Recursive Functions}
 
     This can be expressed in Python as follows:
 
@@ -161,11 +167,19 @@ def factorial(n):
 
     The function can be called as follows:
 
-    \begin{lstlisting}[language=Python]
-factorial(5)
-    \end{lstlisting}
-
-    The output of the function call is: \texttt{120}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{lstlisting}[language=Python]
+f = factorial(5)
+print(f)
+            \end{lstlisting}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{lstlisting}[style=output, language=Python]
+120
+            \end{lstlisting}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Functions}
@@ -187,15 +201,4 @@ square(5)
     The output of the function call is: \texttt{25}
 \end{frame}
 
-\begin{frame}[fragile]{Objects, Classes, and Methods}
-    \begin{itemize}
-        \item Python is an object-oriented programming language.
-        \item Almost everything in Python is an object, with its properties and methods.
-        \item A Class is like an object constructor, or a "blueprint" for creating objects.
-        \item A Class is defined using the \texttt{class} keyword.
-        \item The \texttt{class} keyword is followed by the class name, parentheses \texttt{()}, and a colon \texttt{:}.
-        \item The \texttt{self} parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.
-        \item It does not have to be named \texttt{self}, you can call it whatever you like, but it has to be the first parameter of any function in the class.
-    \end{itemize}
-\end{frame}
 \end{document}

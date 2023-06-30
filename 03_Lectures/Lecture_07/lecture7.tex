@@ -1,0 +1,131 @@
+\documentclass[
+    aspectratio=169, 
+    usepdftitle=false, 
+    xcolor={dvipsnames},
+    hyperref={
+        colorlinks,
+        linkcolor=black,
+        urlcolor=blue}
+    ]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{amsmath}
+\lstset{
+    numbers=left,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+}
+
+\lstdefinestyle{output}{
+    numbers=none,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=0em,
+    basicstyle=\footnotesize\ttfamily,
+    xleftmargin=.075\textwidth,
+    xrightmargin=.075\textwidth,
+    numberstyle=\footnotesize\ttfamily,
+    upquote=true,
+    framesep=10pt,
+    numbersep=20pt,
+    keywordstyle=\bfseries,
+    stringstyle=\textit,
+    showstringspaces=false,
+    columns=fixed,
+    breaklines=true,
+    backgroundcolor=\color{lightgray},
+}
+% \usepackage{xcolor}
+
+\hypersetup{colorlinks,urlcolor=blue}
+\addtobeamertemplate{headline}{\hypersetup{linkcolor=.}}{}
+\addtobeamertemplate{footline}{\hypersetup{linkcolor=.}}{}
+
+\definecolor{Light}{gray}{.90}
+\sethlcolor{Light}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}% will affect all \texttt
+
+\title[Introduction to Python]{Introduction to Python}
+\subtitle{Lecture 6: LaTeX}
+\author{Daniel Kadyrov}
+\date{July 12th, 2023}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{LaTeX}
+    \begin{itemize}
+        \item LaTeX is a document preparation system.
+        \item It is used to create documents with professional quality typesetting.
+        \item LaTeX is the de facto standard for the communication and publication of scientific documents.
+        \item LaTeX is available as free software.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Download LaTeX}
+    \begin{itemize}
+        \item Mac users: \url{http://www.tug.org/mactex/}
+        \item Windows users: \url{http://miktex.org/}
+        \item VSCode Extension: \url{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}
+        \item Overleaf: \url{https://www.overleaf.com/}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Basic Structure}
+    \begin{lstlisting}[language=TeX]
+\documentclass{article}
+\begin{document}
+    Hello World!
+\end{document}
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Mathematic Equations}
+    \begin{lstlisting}[language=TeX]
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+    \begin{equation}
+        \label{eq:1}
+        \frac{1}{n^2}
+    \end{equation}
+\end{document}
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Graphics}
+    \begin{lstlisting}[language=TeX]
+\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{image.png}
+        \caption{A boat.}
+        \label{fig:boat1}
+    \end{figure}
+\end{document}
+    \end{lstlisting}
+\end{frame}
+
+
+\end{document}

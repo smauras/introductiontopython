@@ -65,7 +65,7 @@
 \title[Introduction to Python]{Introduction to Python}
 \subtitle{Lecture 2: Loops and Conditionals}
 \author{Daniel Kadyrov}
-\date{July 4th, 2023}
+\date{July 5th, 2023}
 
 \begin{document}
 
@@ -277,8 +277,8 @@ else:
 \end{frame}
 
 \begin{frame}[fragile]{Else Statements}
-    \begin{itemize}
-        \item Here is an example of an \texttt{else} statement:
+
+   Here is an example of an \texttt{else} statement:
         \begin{lstlisting}[language=Python]
 if x > 0:
     print("x is positive")
@@ -287,15 +287,6 @@ elif x < 0:
 else:
     print("x is zero")
         \end{lstlisting}
-        \item This will print \texttt{x is positive} if the variable \texttt{x} is greater than 0.
-        \item This will print \texttt{x is negative} if the variable \texttt{x} is less than 0.
-        \item This will print \texttt{x is zero} if the variable \texttt{x} is equal to 0.
-        \item The \texttt{<condition>} \texttt{x > 0} is evaluated.
-        \item The \texttt{<code>} \texttt{print("x is positive")} is executed if the \texttt{<condition>} is true.
-        \item The \texttt{<condition>} \texttt{x < 0} is evaluated.
-        \item The \texttt{<code>} \texttt{print("x is negative")} is executed if the \texttt{<condition>} is true.
-        \item The \texttt{<code>} \texttt{print("x is zero")} is executed if no other \texttt{<condition>} is true.
-    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Nested Conditionals}
@@ -312,19 +303,6 @@ if x > 0:
 else:
     print("x is less than or equal to 0")
         \end{lstlisting}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Nested Conditionals}
-    \begin{itemize}
-        \item This will print \texttt{x is greater than 10} if the variable \texttt{x} is greater than 10.
-        \item This will print \texttt{x is between 0 and 10} if the variable \texttt{x} is between 0 and 10.
-        \item This will print \texttt{x is less than or equal to 0} if the variable \texttt{x} is less than or equal to 0.
-        \item The \texttt{<condition>} \texttt{x > 0} is evaluated.
-        \item The \texttt{<condition>} \texttt{x > 10} is evaluated if the \texttt{<condition>} \texttt{x > 0} is true.
-        \item The \texttt{<code>} \texttt{print("x is greater than 10")} is executed if the \texttt{<condition>} \texttt{x > 10} is true.
-        \item The \texttt{<code>} \texttt{print("x is between 0 and 10")} is executed if the \texttt{<condition>} \texttt{x > 10} is false.
-        \item The \texttt{<code>} \texttt{print("x is less than or equal to 0")} is executed if the \texttt{<condition>} \texttt{x > 0} is false.
     \end{itemize}
 \end{frame}
 

@@ -65,7 +65,7 @@
 \title[Introduction to Python]{Introduction to Python}
 \subtitle{Lecture 6: Git and Collaboration}
 \author{Daniel Kadyrov}
-\date{July 4th, 2023}
+\date{July 11th, 2023}
 
 \begin{document}
 
@@ -75,7 +75,7 @@
 
 \begin{frame}{Git}
     \begin{itemize}
-        \item Git is a version control system that lets you manage and keep track of your source code history.
+        \item Git is a version control system that manages and tracks source code history.
         \item Git is a distributed version control system, meaning that the entire codebase and history is available on every developer's computer, which allows for easy branching and merging.
         \item Git is the most commonly used version control system, and is used as the basis for many other services and tools.
     \end{itemize}
@@ -121,7 +121,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Git Workflow}
+\begin{frame}[fragile]{Git Workflow}
     \begin{itemize}
         \item Create a new branch.
         \item Add commits.
@@ -131,12 +131,13 @@
         \item Merge.
     \end{itemize}
 
-    \begin{lstlistings}[language=bash]
-        git checkout -b new-branch
-        git add .
-        git commit -m "message"
-        git push origin new-branch
-    \end{lstlistings}
+    \begin{lstlisting}[style=output, language=bash]
+git checkout -b new_branch
+git add .
+git commit -m "message"
+git push origin new_branch
+    \end{lstlisting}
+
 \end{frame}
 
 \end{document}
